@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+
+<div class="card" style="width: 22rem;">
+  <img src="{{fruits.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title" style="text-align: center;" >{{fruits.name}}</h4>
+    <p class="card-text">{{fruits.desc}}</p>
+    <h5>Price {{fruits.price}}</h5>
+    <a href="{% url 'update' fruits.id %}" class="btn btn-warning">UPDATE</a>
+    <a href="{% url 'delete' fruits.id %}" class="btn btn-danger">DELETE</a>
+  </div>
+</div>
+
+
+
+<!-- {{fruits.name}}<br>
+{{fruits.desc}}<br>
+<img src={{fruits.image.url}} alt="" height="230px, width=200px"><br>
+Price {{fruits.price}}<br>
+<a class="btn btn warning" href="{% url 'update' fruits.id %}">UPDATE</a>
+<a class="btn btn danger" href="{% url 'delete' fruits.id %}">DELETE</a> -->
